@@ -1,7 +1,5 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const cssnano = require('cssnano')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin")
 
@@ -74,9 +72,6 @@ module.exports = (env, argv) => ({
 	},
 	optimization: {
 		minimizer: [
-			new OptimizeCssAssetsPlugin({
-				cssProcessor: cssnano
-			}),
 			new TerserPlugin(),
 		]
 	},
